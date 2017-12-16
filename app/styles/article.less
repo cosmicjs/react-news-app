@@ -1,0 +1,73 @@
+
+/*
+	This styles for the articles
+*/
+
+article{
+
+	@TitleColor: #111;
+	@BodyColor: #444;
+	@TimeColor: #666;
+
+	padding-top: 2em;
+	padding-bottom: 4em;
+	max-width: 768px;
+	margin: 0 auto;
+	color: @BodyColor;
+
+	h1, h2, h3, h4, h5, h6{ color: @TitleColor; font-weight: 400 }
+
+	h1, h2, h3, h4, h5, h6, p, div, hr {
+		padding-bottom: 1em;
+	}
+
+	header{
+		h1, h2, h3 {
+			text-transform: uppercase;
+			font-size: 6em;
+
+			@media (max-width: 800px){
+				font-size: 3em;
+			}
+
+			font-weight: 300;
+			padding-bottom: 0.5em
+		}
+		time{
+			color: @TimeColor;
+			font-size: 1.2em;
+			display: inline-block;
+			padding: 0 1em 1em 0;
+		}
+
+		.author{
+			font-size: 1.3em;
+
+			.profile-pic{
+				position: relative;
+				top: .5em;
+				display: inline-block;
+				width: 2em;
+				height: 2em;
+				background-color: rgba(0,0,0,.2);
+				border-radius: 50%;
+				overflow: hidden;
+				margin-right: .5em;
+
+				img{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	p { line-height: 1.5; font-size: 1.2em}
+
+	h1 {font-size: 2.5em}
+	h2 {font-size: 2.2em}
+	h3 {font-size: 1.8em}
+	h4 {font-size: 1.6em}
+	h5 {font-size: 1.4em}
+}

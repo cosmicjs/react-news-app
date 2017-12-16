@@ -1,0 +1,229 @@
+@AppBarColor: #333;
+@SideBarColor: #222;
+@SideBarSize: 256px;
+@BoxPadding: 8px;
+@TextTransition: 0.3s;
+@SideBarTransition: 0.6s;
+@SideBarAppearWidth: 960px;
+@TitleDisplayWidth: 500px;
+@WhiteText: rgba(255,255,255,.6);
+@WhiteTextHover: rgba(255,255,255,1);
+
+@import "./loader.less";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.textHover {
+	transition: color @TextTransition;
+}
+
+#app,
+.app-container,
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#app,
+.app-container {
+	position: relative;
+	overflow: hidden;
+}
+
+.app-container {
+	& > header {
+		background-color: @AppBarColor;
+		color: @WhiteText;
+		font-size: 1.2rem;
+		padding: @BoxPadding;
+
+		& > a{
+			display: inline-block;
+			color: inherit;
+			text-decoration: none;
+
+			.textHover;
+			&:hover {
+				color: @WhiteTextHover;
+			}
+
+			img{
+				margin-right: .5em;
+			}
+
+			h1 {
+				font-weight: 400;
+				position: relative;
+				top: -.25em;
+				display: inline-block;
+
+				@media (max-width: @TitleDisplayWidth){
+					display: none;
+				}
+
+				font-size: 1em;
+			}
+		}
+
+		nav{
+			font-size: .8em;
+			display: inline-block;
+			vertical-align: top;
+			padding: .35em 0 0 .5em;
+
+			li {
+				display: inline-block;
+				list-style: none;
+
+				a{
+					display: inline-block;
+					padding: @BoxPadding / 2;
+					color: inherit;
+					text-decoration: none;
+					text-transform: uppercase;
+
+					.textHover;
+					&:hover{
+						color: @WhiteTextHover;
+					}
+
+					&.active{
+						color: @WhiteTextHover;
+					}
+				}
+			}
+		}
+
+		a.clear-cache{
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+			background-image: url('/refresh.png');
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			opacity: .6;
+			transition: opacity .4s;
+			float: right;
+			&:hover{
+				opacity: 1
+			}
+		}
+	}
+
+	& > .sidebar {
+		position: absolute;
+		width: @SideBarSize;
+		height: 100%;
+		background-color: @SideBarColor;
+		color: @WhiteText;
+
+		transition: transform @SideBarTransition;
+		-webkit-transition: transform @SideBarTransition;
+		-ms-transition: transform @SideBarTransition;
+		-moz-transition: transform @SideBarTransition;
+		-o-transition: transform @SideBarTransition;
+
+		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		-moz-transform: translateX(0);
+		-o-transform: translateX(0);
+
+		@media (max-width: @SideBarAppearWidth){
+			transform: translateX(-100%);
+			-webkit-transform: translateX(-100%);
+			-ms-transform: translateX(-100%);
+			-moz-transform: translateX(-100%);
+			-o-transform: translateX(-100%);
+		}
+
+		nav li {
+			list-style: none;
+			a{
+				color: inherit;
+				display: block;
+				text-decoration: none;
+				padding: @BoxPadding;
+
+				border-right: solid 4px;
+				border-right-color: inherit;
+
+				&:target,
+				&:visited {
+					color: inherit;
+				}
+
+				.textHover;
+				&:hover {
+					color: @WhiteTextHover;
+				}
+
+				&.active{
+					font-weight: bold;
+					color: white;
+					border-right-color: white;
+				}
+			}
+		}
+	}
+
+	& > main {
+		height: 100%;
+		overflow-y: auto;
+		padding: @BoxPadding @BoxPadding 5em (@SideBarSize + @BoxPadding);
+
+		transition: padding @SideBarTransition;
+		-webkit-transition: padding @SideBarTransition;
+		-ms-transition: padding @SideBarTransition;
+		-moz-transition: padding @SideBarTransition;
+		-o-transition: padding @SideBarTransition;
+
+		@media (max-width: @SideBarAppearWidth){
+			padding-left: @BoxPadding;
+		}
+
+		@import "./page.less";
+		@import "./article.less";
+		@import "./tiles.less";
+
+	}
+
+	a.more{
+		display: table;
+		margin: 1em auto;
+		padding: 1em;
+		background-color: rgba(0,0,0,.3);
+		color: @WhiteText;
+		.textHover;
+		&:hover {
+			color: @WhiteTextHover;
+		}
+		cursor: pointer;
+	}
+}
+
+hr{
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: rgba(0,0,0,.1);
+}
+
+.error-message{
+	text-align: center;
+	font-size: 3em;
+	font-weight: 300;
+
+	h1 {font-weight: 300; font-size: 3em}
+}
