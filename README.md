@@ -15,7 +15,7 @@ from the Cosmic JS API (reducing bulk data for lists)
 minimal amount of time.
 
 ## Article
-For further reading, checkout the Cosmic JS article [here]().
+For further reading, checkout the Cosmic JS article [here](https://cosmicjs.com/articles/building-your-own-news-blog-with-cosmic-js-react-jba337s5).
 
 ## Getting started
 Make sure you have npm and git installed before starting to work on this project.
