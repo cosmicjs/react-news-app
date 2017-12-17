@@ -24,7 +24,7 @@ build dependencies with `npm install`.
 
 ```bash
 git clone https://github.com/cosmicjs/cosmic-news-app
-cd multi-language-survey
+cd cosmic-news-app
 npm install
 ```
 ## Add / Edit Content
@@ -54,9 +54,9 @@ with 300px as the minimum width. Anything lower and you risk a poor user experie
 
 ## Configuration
 This app uses a few other configurations in `config.js`besides the Cosmic JS defaults:
-* title: The title of the application. Used within the build process and within the
+* `title`: The title of the application. Used within the build process and within the
 titles of the app.
-* articlePageSize: The number of articles loaded within each page.
+* `articlePageSize`: The number of articles loaded within each page.
 
 ## App and Components overview
 
