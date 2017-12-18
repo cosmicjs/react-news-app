@@ -1,13 +1,15 @@
-# Cosmic JS News App
+# React News App
+![React news App](https://cosmic-s3.imgix.net/6aab7520-e3a5-11e7-b2c2-0d51136efa6e-react-news-app.png?w=1200)
+### [View the demo](https://cosmicjs.com/apps/react-news-app)
 
 ## Why
-1. The ability to manage content using the Cosmic JS API
+1. The ability to manage content using the [Cosmic JS API](https://cosmicjs.com)
 2. Greater control over the style and layout of your news blog
 3. Leverages the browser cache to help keep API requests lean
 4. Minimal code for greater flexibility for your own adsense or React plugins
 
 ## How it works
-1. The ReactJS based client requests the backend for the relevant listings or
+1. The React based client requests the backend for the relevant listings or
 article/page content.
 2. The server uses minimal Express middleware `data.js` to fetch and list articles and pages
 from the Cosmic JS API (reducing bulk data for lists)
