@@ -25,8 +25,8 @@ Once available, clone the repository using `git clone` and install the required
 build dependencies with `npm install`.
 
 ```bash
-git clone https://github.com/cosmicjs/cosmic-news-app
-cd cosmic-news-app
+git clone https://github.com/cosmicjs/react-news-app
+cd react-news-app
 npm install
 ```
 ## Add / Edit Content
